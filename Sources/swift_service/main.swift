@@ -3,6 +3,7 @@ import PerfectHTTP
 import PerfectHTTPServer
 
 var routes = Routes()
+
 routes.add(method: .get, uri: "/") {
     request, response in
     response.setHeader(.contentType, value: "text/html")
@@ -13,7 +14,7 @@ routes.add(method: .get, uri: "/") {
 do {
     // 启动HTTP服务器
     try HTTPServer.launch(
-        .server(name: "www.example.ca", port: 8181, routes: routes))
+        .server(name: "localhost", port: 8181, routes: routes))
 } catch {
     fatalError("\(error)") // fatal error launching one of the servers
 }
