@@ -9,9 +9,9 @@ let package = Package(
         // Dependencies declare other packages that this package depends on.
         // .package(url: /* package url */, from: "1.0.0"),
         .package(url: "https://github.com/PerfectlySoft/Perfect-HTTPServer.git", from: "3.0.0"),
-        .package(url:"https://github.com/PerfectlySoft/Perfect-MySQL.git", from: "3.0.0"),
-        .package(url: "https://github.com/PerfectlySoft/Perfect-Mustache.git", from: "3.0.0"),
-        .package(url: "https://github.com/SwiftORM/MySQL-StORM",  from: "3.3.0"),
+        .package(url: "https://github.com/PerfectlySoft/Perfect-RequestLogger.git", from: "3.0.0"),
+//        .package(url:"https://github.com/PerfectlySoft/Perfect-MySQL.git", from: "3.0.0"),
+//        .package(url: "https://github.com/SwiftORM/MySQL-StORM.git", from: "3.0.0")
         
     ],
     targets: [
@@ -19,7 +19,7 @@ let package = Package(
         // Targets can depend on other targets in this package, and on products in packages which this package depends on.
         .target(
             name: "swift_service",
-            dependencies: ["PerfectHTTPServer", "PerfectMySQL", "PerfectMustache", "MySQLStORM"]),
+            dependencies: ["PerfectHTTPServer", "PerfectRequestLogger",]),
         .testTarget(
             name: "swift_serviceTests",
             dependencies: ["swift_service"]),
