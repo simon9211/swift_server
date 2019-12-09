@@ -885,10 +885,6 @@ public class Handlers {
     public static func goodsDetail(request: HTTPRequest, response: HTTPResponse) {
         let params = request.params()[0].1
         let postParams = request.postParams
-//
-        
-        
-        
         let data:[String: Any] = [
             "goodInfo":[
                 "image5": "",
@@ -924,7 +920,6 @@ public class Handlers {
         ]
         
         returnJSONData(message: "success", data: data, response: response)
-        
     }
     
     private static func returnJSONMessage(message: String, response: HTTPResponse) {
@@ -950,12 +945,10 @@ public class Handlers {
         do {
             let json = try jsonDic.jsonEncodedString()
             response.setBody(string: json)
-//                    .setBody(json: ["message": message, "data":"{\"data\":\"aaaa\"}"])
                     .setHeader(.contentType, value: "application/json")
                     .setHeader(.eTag, value:"zzzzzz")
                     .setHeader(.date, value: "2019")
                     .completed()
-                
         }catch{
             response.setBody(string: "Error handling request: \(error)")
                     .completed()
